@@ -5,11 +5,13 @@ let creerGetal = {};
 let getallen = {};
 let resultaat;
 let soort;
+let inputbyComputer = false;
 button.addEventListener("click", (e) => {
     let indexCreer = Object.values(creerGetal).length;
     let indexGetallen = Object.values(getallen).length;
     console.log("Dit is de index van de getallen " + indexGetallen);
      if(e.target.parentNode.className == "nummer"){
+        inputbyComputer = false;
         if(display.textContent == resultaat){
             display.textContent = "";
         }
@@ -18,7 +20,7 @@ button.addEventListener("click", (e) => {
     }
 
     if(e.target.parentNode.className == "berekening"){
-        if(display.textContent !== "" && display.textContent !== `${resultaat}`){
+        if(display.textContent !== "" && inputbyComputer == false){
             console.log("toegevoegd aan object")
             getallen[indexGetallen] = parseFloat(display.textContent);
             console.log(getallen);
@@ -103,6 +105,8 @@ function maal(a, b){
 function resetGetallen(){
     getallen ={};
     getallen[0] = resultaat
+    console.log(getallen);
     display.textContent = resultaat;
+    inputbyComputer = true;
     console.log("Het resultaat is " + resultaat);
 }
