@@ -6,13 +6,21 @@ let creerGetal = {
 let getallen= {
 
 }
-console.log(Object.values(creerGetal).length);
 
 button.addEventListener("click", (e) => {
     if(e.target.parentNode.classList.contains("nummer")){
-        console.log(e.target);
         display.textContent += e.target.textContent
         let index = Object.values(creerGetal).length;
         creerGetal[index] = e.target.textContent;
     }
 });
+
+button.addEventListener("click", (e) =>{
+    if(e.target.parentNode.classList.contains("berekening")){
+        let index = Object.values(getallen).length;
+        getallen[index] = display.textContent;
+        console.log(getallen);
+        display.textContent = "";
+    }
+
+})
