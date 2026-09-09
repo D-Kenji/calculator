@@ -25,11 +25,12 @@
     align-content: center;
 }
 
-.button {
+button {
     align-content: center;
     margin: 10px;
     width: 50px;
     height: 50px;
     background-color: whitesmoke;
     text-align: center;
+    border: none;
 }
