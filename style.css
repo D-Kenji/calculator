@@ -11,6 +11,8 @@
     margin: 12.5px;
     margin-top: 30px;
     display: flex;
+    justify-content: end;
+    align-items: center;
 }
 
 .buttons{
@@ -33,4 +35,7 @@ button {
     background-color: whitesmoke;
     text-align: center;
     border: none;
+}
+.displayTekst{
+    margin: 5px;
 }
