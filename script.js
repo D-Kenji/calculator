@@ -12,7 +12,13 @@ button.addEventListener("click", (e) => {
         if(display.textContent === resultaat){
             display.textContent = "";
         }
-        display.textContent += e.target.textContent;
+        let showInDisplay = true;
+         if(e.target.className === "komma" && display.textContent.includes(".")){
+            showInDisplay = false;
+        }
+        if(showInDisplay){
+            display.textContent += e.target.textContent;
+        }
     }
 
     if(e.target.parentNode.className === "berekening"){
