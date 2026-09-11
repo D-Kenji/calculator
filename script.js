@@ -48,6 +48,11 @@ button.addEventListener("click", (e) => {
                 berekening();
             }
         }
+    if(e.target.className === "clear"){
+        getallen = {};
+        display.textContent = "";
+        inputbyComputer = false;
+    }
     }
 );
 const bewerking = {
