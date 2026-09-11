@@ -22,7 +22,10 @@ button.addEventListener("click", (e) => {
     }
 
     if(e.target.parentNode.className === "berekening"){
-        if(display.textContent !== "" && inputbyComputer === false){
+        if(inputbyComputer){
+        display.textContent = "";
+        }
+        if(display.textContent !== "" && inputbyComputer == false){
             getallen[indexGetallen] = parseFloat(display.textContent);
             display.textContent = "";
             indexGetallen = Object.values(getallen).length;
@@ -37,6 +40,7 @@ button.addEventListener("click", (e) => {
                     if(indexGetallen !== 2){
                         console.log(indexGetallen);
                         alert("Er is geen tweede getal");
+                        display.textContent = getallen[0];
                     }
                     break;
             }
