@@ -35,6 +35,7 @@ button {
     background-color: whitesmoke;
     text-align: center;
     border: none;
+    font-size: 25px;
 }
 .displayTekst{
     margin: 5px;
