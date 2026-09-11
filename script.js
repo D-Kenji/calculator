@@ -60,6 +60,7 @@ const bewerking = {
 
 function berekening(){
     resultaat = bewerking[soort](getallen[0],getallen[1]);
+    resultaat = parseFloat(resultaat.toFixed(10));
     resetGetallen();
 
 }
