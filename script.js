@@ -1,7 +1,7 @@
 const display = document.querySelector(".displayTekst");
 const button = document.querySelector(".buttons");
-const logs = document.querySelector(".logs");
-const historyButton = document.querySelector("historyButton");
+const logs = document.querySelector("#logs");
+const historyButton = document.querySelector(".historyButton");
 let getallen = {};
 let resultaat;
 let soort;
@@ -86,3 +86,7 @@ function addLog(){
     newLog.textContent = `${lastOperation} = ${resultaat}`;
     logs.appendChild(newLog);
 }
+
+historyButton.addEventListener("click",() => {
+    logs.classList.toggle('hidden');
+})
