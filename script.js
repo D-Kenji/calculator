@@ -1,10 +1,12 @@
 const display = document.querySelector(".displayTekst");
 const button = document.querySelector(".buttons");
-
+const logs = document.querySelector(".logs");
+const historyButton = document.querySelector("historyButton");
 let getallen = {};
 let resultaat;
 let soort;
 let inputbyComputer = false;
+let lastOperation;
 button.addEventListener("click", (e) => {
     let indexGetallen = Object.values(getallen).length;
      if(e.target.parentNode.className === "nummer"){
@@ -56,10 +58,10 @@ button.addEventListener("click", (e) => {
     }
 );
 const bewerking = {
-    plus: (a,b) => a+b,
-    min: (a,b) => a-b,
-    maal: (a,b) => a*b,
-    delen: (a,b) => a/b,
+    plus: (a,b) => {lastOperation = `${a} + ${b}`; return a+b},
+    min: (a,b) => {lastOperation = `${a} - ${b}`; return a-b},
+    maal: (a,b) => {lastOperation = `${a} x ${b}`; return a*b},
+    delen: (a,b) => {lastOperation = `${a} ÷ ${b}`; return a/b},
 
 }
 
@@ -75,4 +77,12 @@ function resetGetallen(){
     getallen[0] = resultaat
     display.textContent = resultaat;
     inputbyComputer = true;
+    addLog();
+}
+
+function addLog(){
+    console.log("logs added")
+    const newLog = document.createElement("p");
+    newLog.textContent = `${lastOperation} = ${resultaat}`;
+    logs.appendChild(newLog);
 }
