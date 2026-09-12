@@ -11,7 +11,7 @@ button.addEventListener("click", (e) => {
     let indexGetallen = Object.values(getallen).length;
      if(e.target.parentNode.className === "nummer"){
         inputbyComputer = false;
-        if(display.textContent === resultaat){
+        if(display.textContent == resultaat){
             display.textContent = "";
         }
         let showInDisplay = true;
@@ -81,7 +81,6 @@ function resetGetallen(){
 }
 
 function addLog(){
-    console.log("logs added")
     const newLog = document.createElement("p");
     newLog.textContent = `${lastOperation} = ${resultaat}`;
     logs.appendChild(newLog);
