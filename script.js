@@ -53,9 +53,13 @@ button.addEventListener("click", (e) => {
     if(e.target.className === "clear"){
         getallen = {};
         display.textContent = "";
-        inputbyComputer = false;
+        inputbyComputer = false;       
+        let aantalLogs = logs.childNodes.length - 1;
+        for(let i = 0; i < aantalLogs; i++){
+            logs.removeChild(document.querySelector(".log"));
     }
     }
+}
 );
 const bewerking = {
     plus: (a,b) => {lastOperation = `${a} + ${b}`; return a+b},
@@ -82,6 +86,7 @@ function resetGetallen(){
 
 function addLog(){
     const newLog = document.createElement("p");
+    newLog.classList.add("log")
     newLog.textContent = `${lastOperation} = ${resultaat}`;
     logs.appendChild(newLog);
 }
